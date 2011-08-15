@@ -1,0 +1,2 @@
+I built this as an example of using django-ratings combined with the jQuery
+raty plugin to do quick & easy ratings of models.
