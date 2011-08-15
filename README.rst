@@ -10,17 +10,7 @@ https://github.com/dcramer/django-ratings
 Installation
 ============
 
-You will need to add ``djangoratings`` to your ``INSTALLED_APPS``::
-
-	INSTALLED_APPS = (
-	    'django.contrib.admin',
-	    'django.contrib.auth',
-	    'django.contrib.contenttypes',
-	    'django.contrib.sessions',
-	    'djangoratings',
-	)
-
-Finally, run ``python manage.py syncdb`` in your application's directory to create the tables.
+First, install ``django-ratings`` using ``pip`` or ``easy_install``. Next, run ``python manage.py syncdb`` in the application's directory to create the tables. 
 
 ============
 Run it
