@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Add New Thing</h2>
+        <div class="block" id="block-tables">
+          <div class="content">
+            <p></p>
+            <div class="inner">
+              <form method="post" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit"/>
+              </form>
+            </div>
+          </div>
+        </div>
+{% endblock %}

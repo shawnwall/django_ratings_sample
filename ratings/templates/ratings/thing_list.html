@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <script type="text/javascript" charset="utf-8" src="{{ STATIC_URL }}js/jquery.raty.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+         $('.thingrating').each(function(index){
+          $(this).raty({
+            readOnly:  false,
+            path: "{{ STATIC_URL }}images/",
+            start: $(this).children("span:first").text(),
+            click: function(score, evt) {
+                var vote_url = "rate/" + this.attr('id').substring(2) + "/" + score + "/";
+                $.ajax({
+                  url: vote_url,
+                  success: function(){
+                    alert('vote successful');
+                  }
+                });
+            }
+          });
+        });
+    });
+  </script>
+{% endblock %}
+{% block main %}
+    <h2>Things</h2>
+        <div class="block" id="block-tables">
+          <div class="content">
+            <p></p>
+            <div class="inner">
+                <table class="table">
+                  <tr>
+                    <th class="first">Name</th>
+                    <th class="last">Rating</th>
+                  </tr>
+                    {% for thing in object_list %}
+                  <tr class="odd">
+                    <td>{{ thing.name }}</td>
+                    <td><div class="thingrating" id="t_{{ thing.id }}"><span style="display:none;">{{ thing.rating.score }}</span></div></td>
+                  </tr>
+                    {% endfor %}
+                </table>
+                <div class="actions-bar wat-cf">       
+                <a href="add/">Add a thing</a>           
+                    {% if is_paginated %}
+                    <div class="pagination">
+                            {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% else %}
+                            <span class="disabled prev_page">« Previous</span>
+                            {% endif %}
+                            <span class="current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                            {% if page_obj.has_next %}
+                            <a rel="next" class="next_page" href="?page={{ page_obj.next_page_number }}">Next »</a>
+                            {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+{% block sidebar %}
+        <div class="block">
+          <div class="sidebar-block">
+            <h4>How to Rate</h4>
+            <p>Roll over the rating for a given item and select a star to rate that item. readOnly is set to false in the javascript so you will be able to change your rating.</p>
+          </div>
+        </div>
+{% endblock %}

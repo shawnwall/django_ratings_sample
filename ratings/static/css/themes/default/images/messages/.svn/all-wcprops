@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/pipecabinet/!svn/ver/3/trunk/pipecabinet_site/pipecabinet/static/css/themes/default/images/messages
+END
+notice.png
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/pipecabinet/!svn/ver/3/trunk/pipecabinet_site/pipecabinet/static/css/themes/default/images/messages/notice.png
+END
+warning.png
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/pipecabinet/!svn/ver/3/trunk/pipecabinet_site/pipecabinet/static/css/themes/default/images/messages/warning.png
+END
+error.png
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/pipecabinet/!svn/ver/3/trunk/pipecabinet_site/pipecabinet/static/css/themes/default/images/messages/error.png
+END

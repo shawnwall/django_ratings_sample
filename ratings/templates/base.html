@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Django Ratings Sample</title>
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" type="text/css" media="screen" />
+  <link rel="stylesheet" id="current-theme" href="{{ STATIC_URL }}css/themes/default/style.css" type="text/css" media="screen" />
+  <script type="text/javascript" charset="utf-8" src="{{ STATIC_URL }}js/jquery-1.6.2.min.js"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1><a href="/">Django Ratings Sample</a></h1>
+      <div id="main-navigation">
+        <ul class="wat-cf">
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper" class="wat-cf">
+      <div id="main">
+
+        {% block main %}
+
+        {% endblock %}
+
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; 2011 <a href="http://shawnwall.com">Shawn Wall</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar">
+        {% block sidebar %}
+        {% endblock %}
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
