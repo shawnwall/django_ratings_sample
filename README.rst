@@ -5,6 +5,7 @@ raty plugin to do quick & easy ratings of models.
 Requirements
 ============
 https://github.com/dcramer/django-ratings
+
 Django 1.3
 
 ============
